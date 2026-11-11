@@ -35,7 +35,7 @@ demo.html           demo funcional
 css/landing.css     estilos y animaciones de la landing
 js/landing.js       teléfono animado, revelado al hacer scroll, progreso
 css/estilos.css     estilos de la demo
-img/                imágenes de la landing (generadas o reales)
+img/                logo de la marca e imágenes de la landing
 IMAGENES.md         prompts para generar cada imagen
 js/semilla.js       datos de demostración (ficticios)
 js/almacen.js       estado único + API simulada

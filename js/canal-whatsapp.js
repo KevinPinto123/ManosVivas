@@ -54,7 +54,7 @@ window.MV = window.MV || {};
 
         <header class="wa__barra">
           <button type="button" class="wa__icono wa__volver" aria-label="Volver">${ico('volver')}</button>
-          <div class="wa__avatar" aria-hidden="true">MV</div>
+          <div class="wa__avatar" aria-hidden="true"><img src="img/Logo_vector.svg" alt=""></div>
           <div class="wa__quien">
             <div class="wa__nombre">ManosVivas</div>
             <div class="wa__estado" id="wa-estado">en línea</div>

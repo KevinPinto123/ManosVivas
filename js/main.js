@@ -147,10 +147,7 @@ window.MV = window.MV || {};
       <header class="barra">
         <div class="barra__interior">
           <div class="marca">
-            <svg class="marca__hoja" viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M12 22c0-7 3-12 9-14 0 8-4 13-9 14Z" fill="var(--rio)"/>
-              <path d="M12 22C8 17 4 15 2 8c7 1 10 6 10 14Z" fill="var(--arcilla)" opacity=".85"/>
-            </svg>
+            <img class="marca__hoja" src="img/Logo_vector.svg" alt="" width="34" height="34">
             <div>
               <div class="marca__nombre">Manos<span>Vivas</span></div>
               <div class="marca__sub">Condorcanqui · Amazonas</div>

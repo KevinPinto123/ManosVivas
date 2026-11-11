@@ -124,8 +124,8 @@ img { max-width: 100%; display: block; }
 .cabecera.con-linea { border-bottom-color: var(--linea); }
 .cabecera__in { display: flex; align-items: center; justify-content: space-between; gap: 20px; min-height: 72px; }
 .marca { display: flex; align-items: center; gap: 10px; text-decoration: none; font-family: var(--display); font-weight: 700; font-size: 21px; letter-spacing: -.02em; }
-.marca svg { width: 28px; height: 28px; transition: transform .5s var(--curva); }
-.marca:hover svg { transform: rotate(-12deg) scale(1.08); }
+.marca__logo { width: 36px; height: 36px; flex: none; transition: transform .5s var(--curva); }
+.marca:hover .marca__logo { transform: rotate(-8deg) scale(1.08); }
 .marca > span > span { color: var(--tinta-3); }
 .menu { display: flex; gap: 26px; align-items: center; }
 .menu a { text-decoration: none; font-size: 14.5px; color: var(--tinta-2); font-weight: 500; position: relative; }
@@ -444,7 +444,7 @@ img { max-width: 100%; display: block; }
 .cierre p { font-size: 19px; max-width: 48ch; margin-top: 26px; color: #BDD3A7; }
 .cierre__acc { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 42px; }
 .cierre__hoja {
-  position: absolute; right: -60px; bottom: -80px; width: min(560px, 70vw); opacity: .14; pointer-events: none;
+  position: absolute; right: -70px; bottom: -90px; width: min(520px, 68vw); opacity: .12; pointer-events: none;
   animation: mece 9s ease-in-out infinite alternate; transform-origin: 50% 100%;
 }
 @keyframes mece { from { transform: rotate(-4deg); } to { transform: rotate(5deg); } }
