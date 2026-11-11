@@ -43,6 +43,7 @@ js/agente.js        bot de WhatsApp: Agente Negocio y Agente Marca
 js/ui.js            piezas compartidas de interfaz
 js/canal-*.js       WhatsApp, app de la coordinadora, Mercado
 js/main.js          pestañas, inicio y demo guiada
+js/tema.js          botón de tema claro y oscuro, compartido por las dos páginas
 vercel.json         sitio estático, sin build
 ```
 

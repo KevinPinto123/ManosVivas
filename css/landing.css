@@ -136,6 +136,13 @@ img { max-width: 100%; display: block; }
 .menu a:not(.btn):hover { color: var(--tinta); }
 .menu a:not(.btn):hover::after { transform: scaleX(1); }
 .menu .btn { min-height: 42px; padding: 0 18px; font-size: 14.5px; }
+.menu__tema { display: flex; }
+.boton-tema {
+  width: 42px; height: 42px; flex: none; display: grid; place-items: center; cursor: pointer;
+  border: 1.5px solid var(--linea); background: transparent; color: var(--tinta-2);
+  border-radius: 50%; transition: border-color .2s, color .2s, transform .2s var(--curva);
+}
+.boton-tema:hover { border-color: var(--tinta); color: var(--tinta); transform: rotate(-12deg); }
 .menu .btn--sel { color: #fff; }
 :root[data-theme="dark"] .menu .btn--sel { color: #0B1F10; }
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .menu .btn--sel { color: #0B1F10; } }

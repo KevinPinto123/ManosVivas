@@ -13,7 +13,15 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap">
 <link rel="stylesheet" href="css/landing.css">
-<script>document.documentElement.classList.add('js');</script>
+<script>
+// Antes de pintar, para que no parpadee al recargar con tema fijado.
+document.documentElement.classList.add('js');
+try {
+  var t = localStorage.getItem('manosvivas.tema');
+  if (t === 'claro') document.documentElement.setAttribute('data-theme', 'light');
+  else if (t === 'oscuro') document.documentElement.setAttribute('data-theme', 'dark');
+} catch (e) {}
+</script>
 </head>
 <body>
 
@@ -31,6 +39,7 @@
       <a href="#en-vivo">En vivo</a>
       <a href="#trazabilidad">Trazabilidad</a>
       <a href="#honestidad">Qué es real</a>
+      <span class="menu__tema" id="menu-tema"></span>
       <a class="btn btn--sel" href="demo.html">Abrir la demo</a>
     </nav>
   </div>
@@ -390,6 +399,7 @@
   </div>
 </footer>
 
+<script src="js/tema.js"></script>
 <script src="js/landing.js"></script>
 </body>
 </html>

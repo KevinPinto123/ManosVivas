@@ -10,6 +10,8 @@
   var reducido = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var raiz = document.documentElement;
 
+  if (window.MV && MV.tema) MV.tema.montarBoton(document.getElementById('menu-tema'), 'boton-tema');
+
   /* --- cabecera y progreso ------------------------------------------------ */
   var cab = document.getElementById('cabecera');
   var barra = document.getElementById('progreso');

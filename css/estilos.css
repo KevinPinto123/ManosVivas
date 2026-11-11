@@ -231,6 +231,7 @@ body::before {
   display: inline-flex; align-items: center; gap: 6px; transition: border-color .18s, color .18s;
 }
 .boton-icono:hover { border-color: var(--borde-fuerte); color: var(--tinta); }
+.boton-tema { width: 40px; padding: 0; justify-content: center; }
 .boton-icono--fuerte { background: var(--rio); color: #fff; border-color: var(--rio); font-weight: 600; }
 .boton-icono--fuerte:hover { color: #fff; filter: brightness(1.06); }
 :root[data-theme="dark"] .boton-icono--fuerte { color: #06130F; }

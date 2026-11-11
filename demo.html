@@ -11,6 +11,14 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&family=IBM+Plex+Mono:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="css/estilos.css">
+<script>
+// Antes de pintar, para que no parpadee al recargar con tema fijado.
+try {
+  var t = localStorage.getItem('manosvivas.tema');
+  if (t === 'claro') document.documentElement.setAttribute('data-theme', 'light');
+  else if (t === 'oscuro') document.documentElement.setAttribute('data-theme', 'dark');
+} catch (e) {}
+</script>
 </head>
 <body>
 
@@ -23,6 +31,7 @@
   </div>
 </noscript>
 
+<script src="js/tema.js"></script>
 <script src="js/semilla.js"></script>
 <script src="js/almacen.js"></script>
 <script src="js/ui.js"></script>

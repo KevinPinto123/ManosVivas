@@ -154,7 +154,7 @@ window.MV = window.MV || {};
             </div>
           </div>
           <nav class="pestanas" role="tablist" aria-label="Canales de ManosVivas" id="nav"></nav>
-          <div class="acciones-barra">
+          <div class="acciones-barra" id="acciones-barra">
             <button class="boton-icono" id="btn-guion" title="Cargar una conversación de ejemplo">Conversación de ejemplo</button>
             <button class="boton-icono" id="btn-reiniciar" title="Volver a los datos iniciales">↻ Reiniciar</button>
           </div>
@@ -189,6 +189,7 @@ window.MV = window.MV || {};
       U().avisar('app', 'Datos de demostración restaurados');
     });
     document.getElementById('btn-guion').addEventListener('click', cargarGuion);
+    if (MV.tema) MV.tema.montarBoton(document.getElementById('acciones-barra'), 'boton-icono boton-tema');
 
     cambiar('pitch');
   }
