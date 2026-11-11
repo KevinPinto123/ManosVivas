@@ -280,21 +280,51 @@ MV.crearSemilla = function crearSemilla() {
   const chats = {};
   artesanas.forEach((a) => { chats[a.id] = { artesanaId: a.id, mensajes: [], sesion: null }; });
 
-  chats.a2.mensajes.push(
-    { id: 'h1', de: 'bot', ts: hora(-1, 17, 30), tipo: 'texto',
-      texto: 'Buenas tardes, Rosa. Anoté tu venta de ayer: 1 collar, S/40.\n\nEscribe *resumen* cuando quieras ver cómo vas.' },
-  );
-  chats.a1.mensajes.push(
-    { id: 'h2', de: 'bot', ts: hora(0, 8, 41), tipo: 'texto',
-      texto: ' *Pedido nuevo en el Mercado*\nKuyay Diseño pidió 2 cántaros de barro (S/360).\n\nEstá esperando tu confirmación en la app.' },
-  );
-  chats.a4.mensajes.push(
-    { id: 'h3', de: 'bot', ts: hora(-2, 16, 5), tipo: 'texto',
-      texto: '¡Gracias, Esther! Anoté los 8 juegos de individuales. El pedido PED-0142 quedó *listo para enviar*.' },
-  );
+  /* Historial previo: un chat vacío no parece WhatsApp. Son días anteriores,
+     para que la demo de hoy siga empezando limpia. */
+  let hSeq = 0;
+  const msg = (aid, d, h, mi, de, extra) => {
+    hSeq += 1;
+    chats[aid].mensajes.push(Object.assign(
+      { id: 'h' + hSeq, ts: hora(d, h, mi), de, estado: de === 'yo' ? 'leido' : undefined },
+      extra));
+  };
+
+  // Rosa: tres días de uso real del Agente Negocio
+  msg('a2', -4, 9, 12, 'bot', { tipo: 'texto', texto: 'Buenos días, Rosa. ¿Vas a salir a buscar semillas hoy?' });
+  msg('a2', -4, 18, 40, 'yo', { tipo: 'texto', texto: 'si fuimos con mis hijas, traje bastante huayruro' });
+  msg('a2', -4, 18, 41, 'bot', { tipo: 'texto', texto: 'Qué bueno. Cuando empieces a ensartar me avisas y lo vamos anotando.' });
+
+  msg('a2', -3, 16, 22, 'yo', { tipo: 'texto', texto: 'vendí 3 pares de aretes' });
+  msg('a2', -3, 16, 23, 'bot', { tipo: 'texto', texto: 'Anotado: 3 pares de aretes, S/90.\n\nHoy llevas *S/90* en 3 piezas.' });
+  msg('a2', -3, 16, 24, 'yo', { tipo: 'texto', texto: 'gracias' });
+
+  msg('a2', -2, 11, 5, 'yo', { tipo: 'audio', escenario: 'claro', duracion: '0:09', artesanaId: 'a2' });
+  msg('a2', -2, 11, 6, 'bot', { tipo: 'texto', texto: 'Entendí: “compré mostacilla y nailon en Nieva”.\n\n¿Cuánto pagaste?', nota: 'Transcripción automática: 89 % de confianza.' });
+  msg('a2', -2, 11, 8, 'yo', { tipo: 'texto', texto: '60 soles' });
+  msg('a2', -2, 11, 8, 'bot', { tipo: 'texto', texto: 'Listo. Lo guardé como *compra de material para después*, no como costo de hoy.' });
+
+  msg('a2', -1, 17, 30, 'bot', { tipo: 'texto', texto: 'Buenas tardes, Rosa. Anoté tu venta de ayer: 1 collar, S/40.\n\nEscribe *resumen* cuando quieras ver cómo vas.' });
+
+  // Yanua, la coordinadora
+  msg('a1', -2, 8, 15, 'bot', { tipo: 'texto', texto: 'Yanua, Esther terminó los 8 juegos de individuales. El pedido PED-0142 quedó *listo para enviar*.' });
+  msg('a1', -2, 8, 20, 'yo', { tipo: 'texto', texto: 'ya aviso al hotel para que recojan' });
+  msg('a1', 0, 8, 41, 'bot', { tipo: 'texto', texto: '*Pedido nuevo en el Mercado*\nKuyay Diseño pidió 2 cántaros de barro (S/360).\n\nEstá esperando tu confirmación en la app.' });
+
+  // Esther
+  msg('a4', -2, 16, 5, 'bot', { tipo: 'texto', texto: '¡Gracias, Esther! Anoté los 8 juegos de individuales. El pedido PED-0142 quedó *listo para enviar*.' });
+  msg('a4', -2, 16, 9, 'yo', { tipo: 'texto', texto: 'queda bonito el tejido esta vez' });
+
+  // Dolores: el audio que el agente no entendió y espera a una persona
+  msg('a3', 0, 7, 15, 'yo', { tipo: 'audio', escenario: 'nativo', duracion: '0:14', artesanaId: 'a3' });
+  msg('a3', 0, 7, 16, 'bot', { tipo: 'texto', texto: 'Escuché tu audio, pero no estoy seguro de haber entendido bien.\n\nPrefiero no anotar algo equivocado en tus cuentas, así que se lo paso a Yanua para que lo escuche ella.', nota: 'Transcripción automática: 38 % de confianza. Por debajo de 70 % el agente no registra: deriva a una persona.' });
+
+  // Marina
+  msg('a5', -5, 19, 2, 'yo', { tipo: 'texto', texto: 'terminé la faja que me encargaron' });
+  msg('a5', -5, 19, 3, 'bot', { tipo: 'texto', texto: 'Anotado. ¿Quieres que la publique en el Mercado con foto?' });
 
   return {
-    version: 5,
+    version: 6,
     config: {
       moneda: 'S/',
       tarifaHora: 10,

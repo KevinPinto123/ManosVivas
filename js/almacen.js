@@ -9,7 +9,7 @@ window.MV = window.MV || {};
 (function (MV) {
   'use strict';
 
-  const CLAVE = 'manosvivas.estado.v5';
+  const CLAVE = 'manosvivas.estado.v6';
   const oyentes = new Set();
   let estado = null;
   let seq = 0;
@@ -20,7 +20,7 @@ window.MV = window.MV || {};
       const crudo = localStorage.getItem(CLAVE);
       if (!crudo) return null;
       const dato = JSON.parse(crudo);
-      return dato && dato.version === 5 ? dato : null;
+      return dato && dato.version === 6 ? dato : null;
     } catch (e) { return null; }
   }
 

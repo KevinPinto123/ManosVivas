@@ -257,7 +257,19 @@ window.MV = window.MV || {};
     if (sel.value !== aid()) { sel.value = aid(); completo = true; }
     raiz.querySelector('#wa-comunidad').textContent = A().artesana(aid()).comunidad;
 
-    if (completo) { hilo.innerHTML = ''; pintados = new Set(); ultimoDia = null; }
+    if (completo) {
+      hilo.innerHTML = '';
+      pintados = new Set();
+      ultimoDia = null;
+      // Empuja la conversación al fondo cuando hay pocos mensajes, como la app real.
+      const relleno = document.createElement('div');
+      relleno.className = 'wa__relleno';
+      hilo.appendChild(relleno);
+      const cifrado = document.createElement('div');
+      cifrado.className = 'wa__cifrado';
+      cifrado.textContent = 'Los mensajes están cifrados de extremo a extremo. Nadie fuera de este chat puede leerlos.';
+      hilo.appendChild(cifrado);
+    }
 
     chat().mensajes.forEach((m) => {
       if (pintados.has(m.id)) { actualizarAcuse(m); return; }

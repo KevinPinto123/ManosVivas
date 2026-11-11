@@ -61,6 +61,8 @@
   --wa-sep: rgba(17, 27, 33, .09);
   --wa-dia: #FFFFFF;
   --wa-dia-tinta: #54656F;
+  --wa-cifrado: #FFF4C5;
+  --wa-cifrado-tinta: #7A6A2F;
   --wa-demo: #E7F0E4;
   --wa-demo-tinta: #2F4D35;
   --wa-demo-borde: #C6D8C0;
@@ -108,12 +110,16 @@
     --wa-burbuja-yo: #005C4B; --wa-burbuja-bot: #202C33; --wa-tinta: #E9EDEF;
     --wa-hora: #8696A0; --wa-icono: #8696A0; --wa-azul: #53BDEB; --wa-onda: #4A5A62;
     --wa-sep: rgba(233, 237, 239, .12); --wa-dia: #182229; --wa-dia-tinta: #8696A0;
-    --wa-demo: #15301B; --wa-demo-tinta: #BDD3A7; --wa-demo-borde: #2B5233;
+    --wa-cifrado: #182229;
+    --wa-cifrado-tinta: #FFD279;
+    --wa-cifrado: #182229;
+  --wa-cifrado-tinta: #FFD279;
+  --wa-demo: #15301B; --wa-demo-tinta: #BDD3A7; --wa-demo-borde: #2B5233;
     --wa-tapiz:
-      radial-gradient(circle at 18% 22%, rgba(233, 237, 239, .045) 0 2px, transparent 2px),
-      radial-gradient(circle at 72% 58%, rgba(233, 237, 239, .04) 0 2px, transparent 2px),
-      radial-gradient(circle at 44% 82%, rgba(233, 237, 239, .035) 0 2px, transparent 2px),
-      radial-gradient(circle at 88% 14%, rgba(233, 237, 239, .03) 0 2px, transparent 2px);
+      radial-gradient(circle at 18% 22%, rgba(233, 237, 239, .08) 0 2.4px, transparent 2px),
+      radial-gradient(circle at 72% 58%, rgba(233, 237, 239, .07) 0 2.4px, transparent 2px),
+      radial-gradient(circle at 44% 82%, rgba(233, 237, 239, .06) 0 2.4px, transparent 2px),
+      radial-gradient(circle at 88% 14%, rgba(233, 237, 239, .055) 0 2.4px, transparent 2px);
     --sombra: 0 1px 2px rgba(0,0,0,.4), 0 6px 20px rgba(0,0,0,.35);
     --sombra-alta: 0 10px 40px rgba(0,0,0,.6);
     color-scheme: dark;
@@ -146,10 +152,10 @@
   --wa-sep: rgba(233, 237, 239, .12); --wa-dia: #182229; --wa-dia-tinta: #8696A0;
   --wa-demo: #15301B; --wa-demo-tinta: #BDD3A7; --wa-demo-borde: #2B5233;
   --wa-tapiz:
-    radial-gradient(circle at 18% 22%, rgba(233, 237, 239, .045) 0 2px, transparent 2px),
-    radial-gradient(circle at 72% 58%, rgba(233, 237, 239, .04) 0 2px, transparent 2px),
-    radial-gradient(circle at 44% 82%, rgba(233, 237, 239, .035) 0 2px, transparent 2px),
-    radial-gradient(circle at 88% 14%, rgba(233, 237, 239, .03) 0 2px, transparent 2px);
+    radial-gradient(circle at 18% 22%, rgba(233, 237, 239, .08) 0 2.4px, transparent 2px),
+    radial-gradient(circle at 72% 58%, rgba(233, 237, 239, .07) 0 2.4px, transparent 2px),
+    radial-gradient(circle at 44% 82%, rgba(233, 237, 239, .06) 0 2.4px, transparent 2px),
+    radial-gradient(circle at 88% 14%, rgba(233, 237, 239, .055) 0 2.4px, transparent 2px);
   --sombra: 0 1px 2px rgba(0,0,0,.4), 0 6px 20px rgba(0,0,0,.35);
   --sombra-alta: 0 10px 40px rgba(0,0,0,.6);
   color-scheme: dark;
@@ -248,7 +254,7 @@ body::before {
   border: 1px solid var(--borde-fuerte); border-radius: 30px;
   background: var(--superficie); box-shadow: var(--sombra-alta);
   overflow: hidden; display: flex; flex-direction: column;
-  height: min(760px, calc(100dvh - 190px)); min-height: 520px;
+  height: min(840px, calc(100dvh - 180px)); min-height: 520px;
 }
 .sincronia .telefono { height: min(700px, calc(100dvh - 210px)); box-shadow: var(--sombra); }
 
@@ -287,17 +293,23 @@ body::before {
 .wa__estado { font-size: 12.5px; opacity: .85; line-height: 1.3; }
 
 /* selector de persona: es de la demo, no de WhatsApp */
+/* Franja de la demo, no de WhatsApp: se mantiene discreta para no romper la ilusión. */
 .wa__persona {
-  flex: none; display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
+  flex: none; display: flex; align-items: center; gap: 6px;
   background: var(--wa-demo); color: var(--wa-demo-tinta);
-  padding: 7px 12px; font-size: 11.5px; border-bottom: 1px solid var(--wa-demo-borde);
+  padding: 3px 10px; font-size: 10.5px; border-bottom: 1px solid var(--wa-demo-borde);
 }
-.wa__persona label { opacity: .75; }
+.wa__persona label { opacity: .7; letter-spacing: .04em; text-transform: uppercase; font-weight: 600; font-size: 9.5px; }
 .wa__persona select {
-  background: var(--superficie); color: var(--tinta); border: 1px solid var(--wa-demo-borde);
-  border-radius: 999px; padding: 5px 10px; font-size: 12px; min-height: 30px; max-width: 170px;
+  background: transparent; color: inherit; border: 0; font: inherit; font-size: 11px;
+  font-weight: 600; padding: 2px 16px 2px 4px; min-height: 22px; max-width: 150px;
+  cursor: pointer; appearance: none;
+  background-image: linear-gradient(45deg, transparent 50%, currentColor 50%), linear-gradient(135deg, currentColor 50%, transparent 50%);
+  background-position: calc(100% - 8px) 10px, calc(100% - 4px) 10px;
+  background-size: 4px 4px, 4px 4px; background-repeat: no-repeat;
 }
-#wa-comunidad { opacity: .7; }
+.wa__persona select:hover { text-decoration: underline; }
+#wa-comunidad { opacity: .6; margin-left: auto; }
 
 /* hilo con fondo de papel tapiz */
 .wa__hilo {
@@ -307,7 +319,15 @@ body::before {
   background-image: var(--wa-tapiz);
   background-size: 260px 260px;
 }
-.wa__dia, .burbuja, .tarjeta-wa, .chips, .escribiendo { flex: 0 0 auto; }
+.wa__dia, .burbuja, .tarjeta-wa, .chips, .escribiendo, .wa__cifrado { flex: 0 0 auto; }
+/* con pocos mensajes la conversación se apoya abajo, no flota arriba */
+.wa__relleno { flex: 1 1 auto; min-height: 0; }
+.wa__cifrado {
+  align-self: center; max-width: 88%; text-align: center; margin: 0 0 8px;
+  background: var(--wa-cifrado); color: var(--wa-cifrado-tinta);
+  font-size: 12px; line-height: 1.4; padding: 6px 12px; border-radius: 8px;
+  box-shadow: 0 1px .5px rgba(11, 20, 26, .13);
+}
 .wa__dia {
   align-self: center; background: var(--wa-dia); color: var(--wa-dia-tinta);
   font-size: 12.5px; padding: 5px 12px; border-radius: 8px; margin: 8px 0 6px;
