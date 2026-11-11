@@ -1,0 +1,401 @@
+﻿<!doctype html>
+<html lang="es-PE">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="claude:viewport-fit-sides" content="cover">
+<title>ManosVivas</title>
+<meta name="description" content="ManosVivas ayuda a las artesanas amazónicas a registrar sus ventas, promocionar sus piezas y llegar a más compradores, desde el WhatsApp que ya usan.">
+<meta property="og:title" content="ManosVivas">
+<meta property="og:description" content="La tecnología se adapta a ellas, no al revés.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 28 28%22%3E%3Cpath d=%22M14 26c0-8 3.5-14 11-16 0 9-4.5 15-11 16Z%22 fill=%22%23123F1B%22/%3E%3Cpath d=%22M14 26C9.5 20 5 17.5 2.5 9c8 1 11.5 6.5 11.5 17Z%22 fill=%22%2390AD2E%22/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="css/landing.css">
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+
+<div class="progreso" aria-hidden="true"><i id="progreso"></i></div>
+
+<header class="cabecera" id="cabecera">
+  <div class="contenedor cabecera__in">
+    <a class="marca" href="#inicio" aria-label="ManosVivas, inicio">
+      <svg viewBox="0 0 28 28" aria-hidden="true">
+        <path d="M14 26c0-8 3.5-14 11-16 0 9-4.5 15-11 16Z" fill="#123F1B"/>
+        <path d="M14 26C9.5 20 5 17.5 2.5 9c8 1 11.5 6.5 11.5 17Z" fill="#90AD2E"/>
+      </svg>
+      <span>Manos<span>Vivas</span></span>
+    </a>
+    <nav class="menu" aria-label="Secciones">
+      <a href="#problema">El problema</a>
+      <a href="#piezas">Tres piezas</a>
+      <a href="#en-vivo">En vivo</a>
+      <a href="#trazabilidad">Trazabilidad</a>
+      <a href="#honestidad">Qué es real</a>
+      <a class="btn btn--sel" href="demo.html">Abrir la demo</a>
+    </nav>
+  </div>
+</header>
+
+<main id="inicio">
+
+  <!-- PORTADA -->
+  <section class="portada">
+    <div class="portada__fondo falta" data-falta="img/portada.jpg">
+      <img class="portada__img" src="img/portada.jpg" alt="Manos de una artesana tejiendo fibra natural en verde y crema frente al bosque" onerror="this.remove()">
+    </div>
+    <div class="portada__in">
+      <span class="rotulo entra" style="--d:100ms">Impact Startup Competition 2027 · Amazonía Viva</span>
+      <h1 class="titular" aria-label="La tecnología se adapta a ellas, no al revés.">
+        <span class="w" style="--i:0" aria-hidden="true">La</span>
+        <span class="w" style="--i:1" aria-hidden="true">tecnología</span>
+        <span class="w" style="--i:2" aria-hidden="true">se</span>
+        <span class="w" style="--i:3" aria-hidden="true">adapta</span>
+        <span class="w" style="--i:4" aria-hidden="true">a</span>
+        <span class="w w--acento" style="--i:5" aria-hidden="true">ellas,</span>
+        <span class="w" style="--i:6" aria-hidden="true">no</span>
+        <span class="w" style="--i:7" aria-hidden="true">al</span>
+        <span class="w" style="--i:8" aria-hidden="true">revés.</span>
+      </h1>
+      <p class="portada__lead entra" style="--d:900ms">ManosVivas ayuda a las artesanas amazónicas a saber cuánto ganan, promocionar lo que crean y llegar a más compradores, desde el WhatsApp que ya usan.</p>
+      <div class="portada__acc entra" style="--d:1100ms">
+        <a class="btn btn--matcha" href="demo.html">
+          Abrir la demo guiada
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a class="btn btn--fantasma" href="#en-vivo">Verla funcionar</a>
+      </div>
+    </div>
+    <a class="portada__bajar" href="#problema" aria-label="Bajar a la propuesta">
+      <span></span>
+    </a>
+    <p class="portada__pie">Condorcanqui, Amazonas · Prototipo con datos ficticios</p>
+  </section>
+
+  <!-- FRANJA -->
+  <div class="franja" aria-hidden="true">
+    <div class="franja__pista">
+      <span>Agente Negocio</span><i></i><span>Agente Marca</span><i></i><span>Mercado ManosVivas</span><i></i><span>Sin formularios</span><i></i><span>Sin contraseñas</span><i></i><span>Desde su WhatsApp</span><i></i>
+      <span>Agente Negocio</span><i></i><span>Agente Marca</span><i></i><span>Mercado ManosVivas</span><i></i><span>Sin formularios</span><i></i><span>Sin contraseñas</span><i></i><span>Desde su WhatsApp</span><i></i>
+    </div>
+  </div>
+
+  <!-- PROBLEMA -->
+  <section class="seccion" id="problema">
+    <div class="contenedor">
+      <span class="rotulo rev">El problema</span>
+      <p class="frase rev">Las artesanas ya saben crear piezas que valen. Lo que les falta es saber <em>cuánto les cuesta hacerlas</em> y cómo llegar a quien las quiere comprar.</p>
+      <div class="problema__cols">
+        <div class="problema__col rev">
+          <span class="problema__n">01</span>
+          <h3>Cuentan de memoria</h3>
+          <p>Las ventas del día, los materiales que compraron y el tiempo que tomó cada pieza viven en la cabeza de quien vende. Así es difícil saber si ganan o si apenas recuperan lo gastado.</p>
+        </div>
+        <div class="problema__col rev">
+          <span class="problema__n">02</span>
+          <h3>Venden por intermediarios</h3>
+          <p>Sin un canal propio, el precio final lo decide quien compra al por mayor. Cada pieza sigue su camino sin que nadie lleve la historia de quién la hizo.</p>
+        </div>
+        <div class="problema__col rev">
+          <span class="problema__n">03</span>
+          <h3>No pueden aprender otro sistema</h3>
+          <p>Un sistema que pide formularios, contraseñas y una app nueva no se usa en la chacra ni después de un día de trabajo. La herramienta tiene que llegar donde ya están.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRES PIEZAS -->
+  <section class="seccion seccion--menta" id="piezas">
+    <div class="contenedor">
+      <div class="encabezado">
+        <div>
+          <span class="rotulo rev">La solución</span>
+          <h2 class="rev">Tres piezas, un solo sistema.</h2>
+        </div>
+        <p class="rev">Cada persona usa el canal que ya le queda cómodo. Por debajo es la misma información: lo que se escribe en WhatsApp aparece al instante en la app de la coordinadora y en el catálogo del comprador.</p>
+      </div>
+      <div class="piezas">
+        <article class="pieza rev">
+          <div class="pieza__img revela falta" data-falta="img/pilar-negocio.jpg">
+            <img src="img/pilar-negocio.jpg" alt="Teléfono con un chat, cuaderno con cuentas, bolsa de monedas y semillas sobre una mesa junto al río" loading="lazy" onerror="this.remove()">
+            <span class="pieza__num">01</span>
+          </div>
+          <div class="pieza__cuerpo">
+            <span class="pieza__canal">WhatsApp · para cada artesana</span>
+            <h3>Agente Negocio</h3>
+            <p>Cuenta la venta como se la contaría a una vecina. El agente anota, separa el material que compró para después del costo de lo que vendió hoy y le muestra cuánto ganó en el día.</p>
+            <ul>
+              <li>Ventas, materiales y trabajo en un solo resumen</li>
+              <li>Acepta texto y audio</li>
+            </ul>
+          </div>
+        </article>
+        <article class="pieza rev" style="--retraso:120ms">
+          <div class="pieza__img revela falta" data-falta="img/pilar-marca.jpg">
+            <img src="img/pilar-marca.jpg" alt="Collar de semillas rojas y negras sobre una tabla de madera" loading="lazy" onerror="this.remove()">
+            <span class="pieza__num">02</span>
+          </div>
+          <div class="pieza__cuerpo">
+            <span class="pieza__canal">WhatsApp · para cada artesana</span>
+            <h3>Agente Marca</h3>
+            <p>Manda la foto de su pieza y recibe un nombre, una descripción y una publicación para redes. Ella aprueba o cambia el texto antes de que se publique.</p>
+            <ul>
+              <li>No inventa el origen ni el significado del diseño</li>
+              <li>Nada se publica sin su aprobación</li>
+            </ul>
+          </div>
+        </article>
+        <article class="pieza rev" style="--retraso:240ms">
+          <div class="pieza__img revela falta" data-falta="img/pilar-mercado.jpg">
+            <img src="img/pilar-mercado.jpg" alt="Tableta mostrando un catálogo de piezas hechas a mano en tonos verdes y crema" loading="lazy" onerror="this.remove()">
+            <span class="pieza__num">03</span>
+          </div>
+          <div class="pieza__cuerpo">
+            <span class="pieza__canal">Web y app · compradores y coordinadoras</span>
+            <h3>Mercado ManosVivas</h3>
+            <p>Un catálogo colectivo donde cada pieza tiene nombre de quien la hizo, comunidad, material y cómo se compone su precio. El comprador pide y la coordinadora lo recibe.</p>
+            <ul>
+              <li>Historia y trazabilidad en cada ficha</li>
+              <li>Pedidos que llegan al WhatsApp de la coordinadora</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- EN VIVO -->
+  <section class="seccion seccion--oscura" id="en-vivo">
+    <div class="contenedor vivo">
+      <div class="vivo__texto">
+        <span class="rotulo rev">En vivo</span>
+        <h2 class="rev">Dos mensajes. Y por primera vez sabe cuánto ganó.</h2>
+        <ol class="vivo__fases" id="fases">
+          <li class="fase" data-fase="0">
+            <b>Cuenta la venta con sus palabras</b>
+            <span>Sin formularios. El agente entiende “dos collares” y “80 soles”.</span>
+          </li>
+          <li class="fase" data-fase="1">
+            <b>El agente la registra</b>
+            <span>Ingreso, piezas y el acumulado del día, en una tarjeta.</span>
+          </li>
+          <li class="fase" data-fase="2">
+            <b>Pide su resumen</b>
+            <span>Materiales, empaque y el valor de sus horas se descuentan. Lo que queda es su ganancia.</span>
+          </li>
+        </ol>
+        <a class="btn btn--matcha rev" href="demo.html">Probarlo en la demo</a>
+      </div>
+
+      <div class="telefono-m rev" id="telefono" aria-label="Animación de una conversación con el Agente Negocio">
+        <div class="telefono-m__barra">
+          <span class="telefono-m__av" aria-hidden="true">MV</span>
+          <div><b>ManosVivas</b><small id="tm-estado">en línea</small></div>
+        </div>
+        <div class="telefono-m__hilo" id="tm-hilo" aria-live="off"></div>
+        <div class="telefono-m__pie">
+          <div class="telefono-m__caja" id="tm-caja"><span id="tm-texto"></span><i class="cursor"></i></div>
+          <span class="telefono-m__enviar" aria-hidden="true">
+            <svg viewBox="0 0 20 20"><path d="M3 10l14-7-5 14-2-6z" fill="currentColor"/></svg>
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- UN DÍA -->
+  <section class="seccion" id="dia">
+    <div class="contenedor dia">
+      <figure class="dia__figura">
+        <div class="marco revela rev falta" data-falta="img/rosa-dia.jpg">
+          <img src="img/rosa-dia.jpg" alt="Ilustración de una artesana de espaldas separando semillas junto al río al atardecer, con su teléfono en la mesa" loading="lazy" onerror="this.remove()">
+        </div>
+        <figcaption>Ilustración referencial generada con IA. No representa a una persona real de la asociación.</figcaption>
+      </figure>
+      <div>
+        <span class="rotulo rev">Así se ve un día</span>
+        <h2 class="rev dia__titulo">Cinco mensajes, sin formularios.</h2>
+        <ol class="pasos" id="pasos">
+          <li class="paso rev">
+            <span class="paso__n">01</span>
+            <div>
+              <h3>Cuenta la venta</h3>
+              <p>Rosa escribe lo que vendió, como lo diría en voz alta.</p>
+              <code>vendí dos collares por 80 soles</code>
+            </div>
+          </li>
+          <li class="paso rev">
+            <span class="paso__n">02</span>
+            <div>
+              <h3>Anota el material</h3>
+              <p>Si lo que compró es para la semana que viene, el agente lo separa. No se descuenta de la ganancia de hoy.</p>
+              <code>compré mostacilla por 60 soles</code>
+            </div>
+          </li>
+          <li class="paso rev">
+            <span class="paso__n">03</span>
+            <div>
+              <h3>Mira cuánto ganó</h3>
+              <p>El resumen muestra ventas, materiales, empaque, el valor de su trabajo y la ganancia estimada.</p>
+              <code>resumen</code>
+            </div>
+          </li>
+          <li class="paso rev">
+            <span class="paso__n">04</span>
+            <div>
+              <h3>Publica una pieza nueva</h3>
+              <p>Envía la foto, pone su precio y revisa el texto que propone el agente.</p>
+              <code>foto → precio → aprobar</code>
+            </div>
+          </li>
+          <li class="paso rev">
+            <span class="paso__n">05</span>
+            <div>
+              <h3>Recibe pedidos sin salir de casa</h3>
+              <p>La coordinadora confirma el pedido en la app. Si un audio no se entiende bien, lo escucha una persona, no el sistema.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRAZABILIDAD -->
+  <section class="seccion seccion--menta" id="trazabilidad">
+    <div class="contenedor traza">
+      <div class="traza__img revela rev falta" data-falta="img/pieza-trazabilidad.jpg">
+        <img src="img/pieza-trazabilidad.jpg" alt="Detalle de un tejido en fibra natural, crema y verde, con una hebra suelta" loading="lazy" onerror="this.remove()">
+        <div class="traza__sello" aria-hidden="true">
+          <span>MV-AM-P2-A1</span>
+          <b>Hecho en Santa María de Nieva</b>
+        </div>
+      </div>
+      <div>
+        <span class="rotulo rev">Trazabilidad</span>
+        <h2 class="rev">Quién la hizo, de dónde viene y cuánto vale su trabajo.</h2>
+        <dl class="traza__lista rev">
+          <div class="traza__fila"><dt>Técnica</dt><dd>Tejido en fibra de chambira, con la técnica que se aprende de madres y abuelas.</dd></div>
+          <div class="traza__fila"><dt>Materiales</dt><dd>Fibra de palmera cosechada del cogollo, sin tumbar el árbol.</dd></div>
+          <div class="traza__fila"><dt>Dónde se hizo</dt><dd>Comunidad, distrito y tiempo de acceso, para que el comprador sepa de dónde viene.</dd></div>
+          <div class="traza__fila"><dt>Precio justo</dt><dd>Materiales, empaque, el valor de las horas de trabajo y la ganancia, a la vista.</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <!-- EJES -->
+  <section class="seccion" id="ejes">
+    <div class="contenedor">
+      <div class="encabezado">
+        <div>
+          <span class="rotulo rev">El reto</span>
+          <h2 class="rev">Lo que pide Amazonía Viva.</h2>
+        </div>
+        <p class="rev">Tres ejes que el sistema evidencia, no solo declara.</p>
+      </div>
+      <div class="ejes">
+        <div class="eje rev">
+          <span class="eje__barra"></span>
+          <span class="rotulo">Bioeconomía</span>
+          <h3>Materia que se cosecha, no se tala</h3>
+          <p>Semillas que el bosque ya soltó, fibra de cogollo, lianas de corte selectivo, madera caída. La ficha dice de dónde sale cada material.</p>
+        </div>
+        <div class="eje rev" style="--retraso:120ms">
+          <span class="eje__barra"></span>
+          <span class="rotulo">Biodiversidad</span>
+          <h3>Práctica visible para el comprador</h3>
+          <p>Cuando la trazabilidad muestra cómo se obtuvo el material, quien compra puede elegir piezas que cuidan el monte.</p>
+        </div>
+        <div class="eje rev" style="--retraso:240ms">
+          <span class="eje__barra"></span>
+          <span class="rotulo">Comunidades</span>
+          <h3>Ellas deciden, la tecnología acompaña</h3>
+          <p>Nadie tiene que instalar una app. El agente pide ayuda a una persona cuando no entiende, y la asociación decide qué se publica.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HONESTIDAD -->
+  <section class="seccion seccion--menta" id="honestidad">
+    <div class="contenedor honesto">
+      <div>
+        <span class="rotulo rev">Qué es real y qué no</span>
+        <h2 class="rev honesto__titulo">Lo que mostramos, sin adornos.</h2>
+        <p class="rev honesto__intro">Este es un prototipo en etapa de idea. Funciona como demostración; todavía no hay usuarias reales ni datos de campo.</p>
+      </div>
+      <ul class="rev">
+        <li><b>Real</b><span>La sincronía entre canales. Lo que pasa en WhatsApp aparece en la app y en el catálogo sin recargar.</span></li>
+        <li><b>Simulado</b><span>El servidor, la base de datos y la API de WhatsApp. Todo corre en el navegador con datos de ejemplo.</span></li>
+        <li><b>Simulado</b><span>La transcripción de audio y el análisis de fotos son respuestas preparadas. En producción irían sobre un modelo real con revisión humana.</span></li>
+        <li><b>Ficticio</b><span>La asociación, las artesanas, los compradores y los pedidos. Las comunidades y distritos son reales y se usan solo como contexto geográfico.</span></li>
+        <li><b>Referencial</b><span>Las imágenes de esta página fueron generadas con IA. No muestran piezas ni personas de la asociación.</span></li>
+        <li><b>Por validar</b><span>Cómo trabajan realmente las asociaciones, cuánto pagarían y si el registro por WhatsApp funciona en campo.</span></li>
+        <li><b>Pendiente</b><span>Ningún convenio, alianza ni piloto está firmado. Las cifras institucionales que se citen deben llevar su fuente oficial y fecha.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- PRÓXIMOS PASOS -->
+  <section class="seccion" id="siguiente">
+    <div class="contenedor">
+      <div class="encabezado">
+        <div>
+          <span class="rotulo rev">Qué sigue</span>
+          <h2 class="rev">Escuchar antes de construir.</h2>
+        </div>
+        <p class="rev">Antes de escribir más código, queremos escuchar a las personas que lo usarían.</p>
+      </div>
+      <div class="hitos">
+        <article class="hito rev">
+          <span class="hito__n">1</span>
+          <h3>Entrevistas en campo</h3>
+          <p>Diez conversaciones con una asociación: cómo llegan los pedidos, quién coordina, qué registran hoy y en qué.</p>
+        </article>
+        <article class="hito rev" style="--retraso:120ms">
+          <span class="hito__n">2</span>
+          <h3>Piloto con una asociación</h3>
+          <p>Seis semanas con el Agente Negocio por WhatsApp. Medimos cuántas registran a diario y si el resumen les sirve para fijar precios.</p>
+        </article>
+        <article class="hito rev" style="--retraso:240ms">
+          <span class="hito__n">3</span>
+          <h3>Validar el canal técnico</h3>
+          <p>Probar el envío de códigos por WhatsApp Business, el costo real por conversación y el modo sin conexión de la app.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CIERRE -->
+  <section class="cierre">
+    <div class="contenedor cierre__in">
+      <h2 class="rev">Conocer cuánto gano. Promocionar lo que creo. <em>Vender a más.</em></h2>
+      <p class="rev">Abre la demo y recorre los tres canales. Todo lo que pasa en WhatsApp aparece en la app y en el catálogo al mismo tiempo.</p>
+      <div class="cierre__acc rev">
+        <a class="btn btn--matcha" href="demo.html">
+          Abrir la demo guiada
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </div>
+    <svg class="cierre__hoja" viewBox="0 0 28 28" aria-hidden="true">
+      <path d="M14 26c0-8 3.5-14 11-16 0 9-4.5 15-11 16Z" fill="#90AD2E"/>
+      <path d="M14 26C9.5 20 5 17.5 2.5 9c8 1 11.5 6.5 11.5 17Z" fill="#BDD3A7"/>
+    </svg>
+  </section>
+
+</main>
+
+<footer class="pie">
+  <div class="contenedor pie__in">
+    <span>ManosVivas · Prototipo para Impact Startup Competition 2027</span>
+    <span>Datos ficticios. Imágenes generadas con IA. Comunidades reales usadas solo como contexto geográfico.</span>
+  </div>
+</footer>
+
+<script src="js/landing.js"></script>
+</body>
+</html>

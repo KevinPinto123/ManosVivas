@@ -1,0 +1,15 @@
+# capturas de prueba
+_capturas/
+
+# sistema
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# editores
+.vscode/
+.idea/
+
+# dependencias (el proyecto no usa ninguna, pero por si acaso)
+node_modules/
+.vercel
