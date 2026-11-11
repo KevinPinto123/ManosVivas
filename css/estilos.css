@@ -44,12 +44,31 @@
   --alerta: #A8321F;
 
   /* whatsapp (marca de WhatsApp) */
-  --wa-verde: #075E54;
+  --wa-sistema: #00543D;
+  --wa-verde: #008069;
   --wa-verde-2: #128C7E;
-  --wa-fondo: #ECE5DD;
-  --wa-burbuja-yo: #DCF8C6;
+  --wa-avatar: #00A884;
+  --wa-enviar: #00A884;
+  --wa-fondo: #EFE7DE;
+  --wa-barra-pie: #F0F2F5;
+  --wa-burbuja-yo: #D9FDD3;
   --wa-burbuja-bot: #FFFFFF;
   --wa-tinta: #111B21;
+  --wa-hora: #667781;
+  --wa-icono: #54656F;
+  --wa-azul: #53BDEB;
+  --wa-onda: #C3CBD1;
+  --wa-sep: rgba(17, 27, 33, .09);
+  --wa-dia: #FFFFFF;
+  --wa-dia-tinta: #54656F;
+  --wa-demo: #E7F0E4;
+  --wa-demo-tinta: #2F4D35;
+  --wa-demo-borde: #C6D8C0;
+  --wa-tapiz:
+    radial-gradient(circle at 18% 22%, rgba(17, 27, 33, .05) 0 2px, transparent 2px),
+    radial-gradient(circle at 72% 58%, rgba(17, 27, 33, .045) 0 2px, transparent 2px),
+    radial-gradient(circle at 44% 82%, rgba(17, 27, 33, .04) 0 2px, transparent 2px),
+    radial-gradient(circle at 88% 14%, rgba(17, 27, 33, .035) 0 2px, transparent 2px);
 
   /* tipografía */
   --display: 'Bricolage Grotesque', 'Segoe UI', system-ui, sans-serif;
@@ -83,8 +102,18 @@
     --matcha: #90AD2E;
     --s1: #D2683A; --s2: #2FA87C; --s3: #B4882E; --s4: #9276C4;
     --ok: #90AD2E; --aviso: #C9DB6A; --alerta: #E57A66;
-    --wa-verde: #1F2C34; --wa-verde-2: #2A3942; --wa-fondo: #0B141A;
+    --wa-sistema: #0B141A;
+    --wa-verde: #1F2C34; --wa-verde-2: #2A3942; --wa-avatar: #6A7175;
+    --wa-enviar: #00A884; --wa-fondo: #0B141A; --wa-barra-pie: #1F2C34;
     --wa-burbuja-yo: #005C4B; --wa-burbuja-bot: #202C33; --wa-tinta: #E9EDEF;
+    --wa-hora: #8696A0; --wa-icono: #8696A0; --wa-azul: #53BDEB; --wa-onda: #4A5A62;
+    --wa-sep: rgba(233, 237, 239, .12); --wa-dia: #182229; --wa-dia-tinta: #8696A0;
+    --wa-demo: #15301B; --wa-demo-tinta: #BDD3A7; --wa-demo-borde: #2B5233;
+    --wa-tapiz:
+      radial-gradient(circle at 18% 22%, rgba(233, 237, 239, .045) 0 2px, transparent 2px),
+      radial-gradient(circle at 72% 58%, rgba(233, 237, 239, .04) 0 2px, transparent 2px),
+      radial-gradient(circle at 44% 82%, rgba(233, 237, 239, .035) 0 2px, transparent 2px),
+      radial-gradient(circle at 88% 14%, rgba(233, 237, 239, .03) 0 2px, transparent 2px);
     --sombra: 0 1px 2px rgba(0,0,0,.4), 0 6px 20px rgba(0,0,0,.35);
     --sombra-alta: 0 10px 40px rgba(0,0,0,.6);
     color-scheme: dark;
@@ -109,8 +138,18 @@
   --matcha: #90AD2E;
   --s1: #D2683A; --s2: #2FA87C; --s3: #B4882E; --s4: #9276C4;
   --ok: #90AD2E; --aviso: #C9DB6A; --alerta: #E57A66;
-  --wa-verde: #1F2C34; --wa-verde-2: #2A3942; --wa-fondo: #0B141A;
+  --wa-sistema: #0B141A;
+  --wa-verde: #1F2C34; --wa-verde-2: #2A3942; --wa-avatar: #6A7175;
+  --wa-enviar: #00A884; --wa-fondo: #0B141A; --wa-barra-pie: #1F2C34;
   --wa-burbuja-yo: #005C4B; --wa-burbuja-bot: #202C33; --wa-tinta: #E9EDEF;
+  --wa-hora: #8696A0; --wa-icono: #8696A0; --wa-azul: #53BDEB; --wa-onda: #4A5A62;
+  --wa-sep: rgba(233, 237, 239, .12); --wa-dia: #182229; --wa-dia-tinta: #8696A0;
+  --wa-demo: #15301B; --wa-demo-tinta: #BDD3A7; --wa-demo-borde: #2B5233;
+  --wa-tapiz:
+    radial-gradient(circle at 18% 22%, rgba(233, 237, 239, .045) 0 2px, transparent 2px),
+    radial-gradient(circle at 72% 58%, rgba(233, 237, 239, .04) 0 2px, transparent 2px),
+    radial-gradient(circle at 44% 82%, rgba(233, 237, 239, .035) 0 2px, transparent 2px),
+    radial-gradient(circle at 88% 14%, rgba(233, 237, 239, .03) 0 2px, transparent 2px);
   --sombra: 0 1px 2px rgba(0,0,0,.4), 0 6px 20px rgba(0,0,0,.35);
   --sombra-alta: 0 10px 40px rgba(0,0,0,.6);
   color-scheme: dark;
@@ -213,139 +252,262 @@ body::before {
 }
 .sincronia .telefono { height: min(700px, calc(100dvh - 210px)); box-shadow: var(--sombra); }
 
-/* ===================== WhatsApp ===================== */
-.wa { display: flex; flex-direction: column; height: 100%; background: var(--wa-fondo); }
-.wa__barra {
-  background: var(--wa-verde); color: #fff; display: flex; align-items: center; gap: 11px;
-  padding: 11px 14px; flex: none;
+/* ===================== WhatsApp =====================
+ * Esta pantalla imita WhatsApp: usa SUS colores, no los de ManosVivas.
+ * Es una simulación y el jurado debe reconocerla al instante.
+ */
+.wa { display: flex; flex-direction: column; height: 100%; background: var(--wa-fondo); position: relative; }
+.wa .ic { display: block; }
+
+/* barra de estado del teléfono */
+.wa__sistema {
+  flex: none; display: flex; align-items: center; justify-content: space-between;
+  background: var(--wa-sistema); color: #fff; padding: 5px 16px 2px; font-size: 12px; font-weight: 600;
 }
-.wa__volver { font-size: 18px; opacity: .85; }
+.wa__sistema-der { display: flex; align-items: center; gap: 5px; opacity: .95; }
+.wa__reloj { font-size: 12px; letter-spacing: .02em; }
+
+/* cabecera del chat */
+.wa__barra {
+  flex: none; background: var(--wa-verde); color: #fff;
+  display: flex; align-items: center; gap: 4px; padding: 7px 8px 7px 4px;
+}
+.wa__icono {
+  width: 38px; height: 38px; border: 0; background: transparent; color: #fff;
+  border-radius: 50%; display: grid; place-items: center; cursor: default; opacity: .92;
+}
+.wa__volver { width: 30px; }
 .wa__avatar {
-  width: 40px; height: 40px; border-radius: 50%; background: #25D366; flex: none;
-  display: grid; place-items: center; font-size: 20px;
+  width: 40px; height: 40px; border-radius: 50%; flex: none; margin-right: 8px;
+  background: var(--wa-avatar); color: #fff; display: grid; place-items: center;
+  font-family: var(--display); font-weight: 700; font-size: 14px; letter-spacing: .02em;
 }
 .wa__quien { flex: 1; min-width: 0; }
-.wa__nombre { font-weight: 600; font-size: 15px; line-height: 1.25; }
-.wa__estado { font-size: 12px; opacity: .8; }
-.wa__iconos { display: flex; gap: 14px; font-size: 15px; opacity: .85; }
+.wa__nombre { font-weight: 600; font-size: 16px; line-height: 1.2; letter-spacing: .005em; }
+.wa__estado { font-size: 12.5px; opacity: .85; line-height: 1.3; }
 
+/* selector de persona: es de la demo, no de WhatsApp */
 .wa__persona {
-  display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
-  background: var(--wa-verde-2); color: #fff; padding: 7px 12px; font-size: 12px; flex: none;
+  flex: none; display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
+  background: var(--wa-demo); color: var(--wa-demo-tinta);
+  padding: 7px 12px; font-size: 11.5px; border-bottom: 1px solid var(--wa-demo-borde);
 }
-.wa__persona label { opacity: .8; }
+.wa__persona label { opacity: .75; }
 .wa__persona select {
-  background: rgba(255,255,255,.14); color: #fff; border: 1px solid rgba(255,255,255,.3);
-  border-radius: 999px; padding: 5px 10px; font-size: 12px; min-height: 30px;
+  background: var(--superficie); color: var(--tinta); border: 1px solid var(--wa-demo-borde);
+  border-radius: 999px; padding: 5px 10px; font-size: 12px; min-height: 30px; max-width: 170px;
 }
-.wa__persona select option { color: #111; }
+#wa-comunidad { opacity: .7; }
 
+/* hilo con fondo de papel tapiz */
 .wa__hilo {
-  flex: 1; overflow-y: auto; padding: 14px 12px 8px;
-  display: flex; flex-direction: column; gap: 7px;
-  background-image: radial-gradient(circle at 12% 18%, rgba(15,107,82,.05) 0 2px, transparent 2px),
-                    radial-gradient(circle at 70% 60%, rgba(192,82,43,.05) 0 2px, transparent 2px);
-  background-size: 110px 110px, 150px 150px;
+  flex: 1; overflow-y: auto; overflow-x: hidden;
+  padding: 12px 9px 10px; display: flex; flex-direction: column; gap: 3px;
+  background-color: var(--wa-fondo);
+  background-image: var(--wa-tapiz);
+  background-size: 260px 260px;
 }
-/* El hilo es flex en columna: sin esto, las tarjetas con overflow oculto
-   se encogen a cero cuando la conversación empieza a desbordar. */
 .wa__dia, .burbuja, .tarjeta-wa, .chips, .escribiendo { flex: 0 0 auto; }
-
 .wa__dia {
-  align-self: center; background: var(--wa-burbuja-bot); color: var(--tinta-3);
-  font-size: 11px; padding: 4px 11px; border-radius: 8px; box-shadow: var(--sombra); margin: 4px 0;
+  align-self: center; background: var(--wa-dia); color: var(--wa-dia-tinta);
+  font-size: 12.5px; padding: 5px 12px; border-radius: 8px; margin: 8px 0 6px;
+  box-shadow: 0 1px .5px rgba(11, 20, 26, .13); text-transform: none; font-weight: 500;
 }
 
+/* burbujas */
 .burbuja {
-  max-width: 85%; padding: 7px 10px 6px; border-radius: 9px; position: relative;
-  box-shadow: 0 1px 1px rgba(0,0,0,.12); font-size: 14.2px; line-height: 1.45;
-  color: var(--wa-tinta); white-space: pre-wrap; word-break: break-word;
+  position: relative; max-width: 83%; padding: 6px 9px 7px; border-radius: 8px;
+  box-shadow: 0 1px .5px rgba(11, 20, 26, .13); font-size: 14.6px; line-height: 1.38;
+  color: var(--wa-tinta); word-break: break-word; margin-top: 3px;
   animation: entra .22s ease-out;
 }
+.burbuja__txt { white-space: pre-wrap; }
 @keyframes entra { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
 @media (prefers-reduced-motion: reduce) { .burbuja { animation: none; } }
-.burbuja--bot { align-self: flex-start; background: var(--wa-burbuja-bot); border-top-left-radius: 2px; }
-.burbuja--yo { align-self: flex-end; background: var(--wa-burbuja-yo); border-top-right-radius: 2px; }
+
+.burbuja--bot { align-self: flex-start; background: var(--wa-burbuja-bot); border-top-left-radius: 0; }
+.burbuja--yo { align-self: flex-end; background: var(--wa-burbuja-yo); border-top-right-radius: 0; }
+/* colitas, como en la aplicación */
+.burbuja--bot::before, .burbuja--yo::before {
+  content: ""; position: absolute; top: 0; width: 9px; height: 13px;
+}
+.burbuja--bot::before {
+  left: -8px;
+  background: var(--wa-burbuja-bot);
+  clip-path: polygon(100% 0, 100% 100%, 0 0);
+}
+.burbuja--yo::before {
+  right: -8px;
+  background: var(--wa-burbuja-yo);
+  clip-path: polygon(0 0, 100% 0, 0 100%);
+}
+/* la colita va solo en el primer mensaje seguido del mismo lado */
+.burbuja + .burbuja--bot::before, .burbuja + .burbuja--yo::before { display: none; }
+.burbuja + .burbuja--bot { border-top-left-radius: 8px; }
+.burbuja + .burbuja--yo { border-top-right-radius: 8px; }
+
 .burbuja b, .burbuja strong { font-weight: 600; }
-.burbuja em { font-style: italic; opacity: .9; }
-.burbuja__pie { display: flex; align-items: center; gap: 4px; justify-content: flex-end; margin-top: 2px; }
-.burbuja__hora { font-size: 10.5px; color: var(--tinta-3); }
-.burbuja--yo .burbuja__hora { color: rgba(17,27,33,.5); }
-:root[data-theme="dark"] .burbuja--yo .burbuja__hora { color: rgba(233,237,239,.6); }
-@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .burbuja--yo .burbuja__hora { color: rgba(233,237,239,.6); } }
-.ticks { font-size: 12px; color: #53BDEB; letter-spacing: -2px; }
+.burbuja em { font-style: italic; }
+.burbuja__pie {
+  float: right; display: inline-flex; align-items: center; gap: 3px;
+  margin: 6px -2px -2px 10px; line-height: 1;
+}
+.burbuja__hora { font-size: 11px; color: var(--wa-hora); }
+.ticks { color: var(--wa-hora); display: flex; }
+.ticks.leido { color: var(--wa-azul); }
+.burbuja--bot .ticks { display: none; }
 .burbuja__nota {
-  display: block; margin-top: 7px; padding-top: 6px; border-top: 1px dashed var(--borde);
-  font-size: 11px; color: var(--tinta-3); white-space: normal; font-style: italic;
+  display: block; clear: both; margin-top: 7px; padding-top: 6px;
+  border-top: 1px solid var(--wa-sep); font-size: 11.5px; color: var(--wa-hora); font-style: italic;
 }
 
-.escribiendo { align-self: flex-start; background: var(--wa-burbuja-bot); border-radius: 9px; padding: 11px 14px; box-shadow: 0 1px 1px rgba(0,0,0,.12); display: flex; gap: 4px; }
-.escribiendo i { width: 7px; height: 7px; border-radius: 50%; background: var(--tinta-3); animation: pulso 1.1s infinite; }
+/* audio */
+.burbuja--audio { min-width: min(278px, 86%); }
+.audio { display: flex; align-items: center; gap: 8px; }
+.audio__play {
+  width: 34px; height: 34px; flex: none; border: 0; border-radius: 50%; cursor: pointer;
+  background: transparent; color: var(--wa-icono); display: grid; place-items: center;
+}
+.audio__play:hover { background: rgba(0, 0, 0, .06); }
+.audio__onda { flex: 1; display: flex; align-items: center; gap: 2px; height: 22px; min-width: 0; }
+.audio__onda i { flex: 1; min-width: 1px; border-radius: 2px; background: var(--wa-onda); transition: background .12s; }
+.audio__onda i.on { background: var(--wa-azul); }
+.audio__dur { font-size: 11.5px; color: var(--wa-hora); flex: none; }
+.audio__av {
+  width: 30px; height: 30px; border-radius: 50%; flex: none; display: grid; place-items: center;
+  color: #fff; font-family: var(--display); font-weight: 700; font-size: 12px;
+}
+
+/* imágenes */
+.burbuja--media { padding: 3px; max-width: 72%; }
+.media { position: relative; display: block; }
+.pieza-foto { width: 100%; display: block; border-radius: 6px; max-height: 260px; object-fit: cover; }
+.media__pie { position: absolute; right: 6px; bottom: 4px; }
+.media__pie .burbuja__pie { float: none; margin: 0; padding: 2px 7px; border-radius: 9px; background: rgba(11, 20, 26, .45); }
+.media__pie .burbuja__hora, .media__pie .ticks { color: #fff; }
+
+/* escribiendo */
+.escribiendo {
+  align-self: flex-start; background: var(--wa-burbuja-bot); border-radius: 8px; border-top-left-radius: 0;
+  padding: 12px 14px; box-shadow: 0 1px .5px rgba(11, 20, 26, .13); display: flex; gap: 4px; margin-top: 3px;
+}
+.escribiendo i { width: 7px; height: 7px; border-radius: 50%; background: var(--wa-hora); animation: pulso 1.1s infinite; }
 .escribiendo i:nth-child(2) { animation-delay: .18s; }
 .escribiendo i:nth-child(3) { animation-delay: .36s; }
-@keyframes pulso { 0%,60%,100% { opacity: .3; transform: translateY(0); } 30% { opacity: 1; transform: translateY(-3px); } }
+@keyframes pulso { 0%, 60%, 100% { opacity: .3; transform: translateY(0); } 30% { opacity: 1; transform: translateY(-3px); } }
 
-/* tarjetas dentro del chat */
+/* tarjetas del agente */
 .tarjeta-wa {
-  align-self: flex-start; max-width: 90%; background: var(--wa-burbuja-bot); border-radius: 9px;
-  border-top-left-radius: 2px; box-shadow: 0 1px 1px rgba(0,0,0,.12); overflow: hidden;
-  animation: entra .22s ease-out; color: var(--wa-tinta);
+  align-self: flex-start; max-width: 92%; background: var(--wa-burbuja-bot); border-radius: 8px;
+  border-top-left-radius: 0; box-shadow: 0 1px .5px rgba(11, 20, 26, .13); overflow: hidden;
+  color: var(--wa-tinta); margin-top: 3px; animation: entra .22s ease-out;
 }
 .tarjeta-wa__cabeza {
-  display: flex; align-items: center; gap: 8px; padding: 9px 12px;
-  background: var(--rio-claro); color: var(--rio); font-weight: 600; font-size: 13.5px;
+  display: flex; align-items: center; justify-content: space-between; gap: 10px;
+  padding: 9px 12px; background: var(--rio); color: var(--superficie); font-weight: 600; font-size: 13.5px;
+}
+.tarjeta-wa__sello {
+  flex: none; font-size: 10px; letter-spacing: .07em; text-transform: uppercase; font-weight: 700;
+  background: rgba(255, 255, 255, .22); border-radius: 999px; padding: 3px 8px;
 }
 .tarjeta-wa__cuerpo { padding: 11px 12px; font-size: 13.5px; }
-.tarjeta-wa__pie { padding: 8px 12px 10px; font-size: 11px; color: var(--tinta-3); border-top: 1px solid var(--borde); }
+.tarjeta-wa__detalle { margin-top: 9px; font-size: 12.5px; color: var(--wa-hora); }
+.tarjeta-wa__pie { padding: 8px 12px 10px; font-size: 11.5px; color: var(--wa-hora); border-top: 1px solid var(--wa-sep); }
+.tarjeta-wa__aviso { margin-top: 11px; padding: 10px; background: var(--oro-claro); color: var(--tinta); border-radius: 8px; font-size: 12px; }
+.tarjeta-wa .pieza-foto { max-height: 190px; margin-bottom: 10px; }
+
+.ficha-wa { display: flex; flex-direction: column; gap: 9px; }
+.ficha-wa__nombre { font-family: var(--display); font-weight: 600; font-size: 15px; }
+.ficha-wa__txt { font-size: 12.8px; color: var(--wa-hora); }
+.ficha-wa__precio { font-size: 17px; font-weight: 700; }
+.ficha-wa__post {
+  font-size: 12.5px; color: var(--wa-hora); white-space: pre-wrap;
+  background: var(--wa-fondo); padding: 9px; border-radius: 8px;
+}
 
 .cifras { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
-.cifra { background: var(--superficie-2); border-radius: var(--r-s); padding: 9px 11px; }
-.cifra__et { font-size: 11px; color: var(--tinta-3); }
+.cifra { background: var(--wa-fondo); border-radius: 8px; padding: 9px 11px; }
+.cifra__et { font-size: 11px; color: var(--wa-hora); }
 .cifra__v { font-family: var(--mono); font-size: 20px; font-weight: 600; letter-spacing: -.02em; font-variant-numeric: tabular-nums; }
 
-.lineas { display: flex; flex-direction: column; gap: 0; }
-.linea { display: flex; justify-content: space-between; gap: 12px; padding: 7px 0; border-bottom: 1px solid var(--borde); font-size: 13.5px; }
+.lineas { display: flex; flex-direction: column; }
+.linea { display: flex; justify-content: space-between; gap: 12px; padding: 7px 0; border-bottom: 1px solid var(--wa-sep); font-size: 13.5px; }
 .linea:last-child { border-bottom: 0; }
 .linea span:last-child { font-family: var(--mono); font-variant-numeric: tabular-nums; }
 .linea--total { font-weight: 700; border-top: 2px solid var(--borde-fuerte); border-bottom: 0; padding-top: 9px; margin-top: 3px; }
 .linea--total span:last-child { color: var(--rio); font-size: 17px; }
 .linea__pt { width: 10px; height: 10px; border-radius: 3px; flex: none; display: inline-block; margin-right: 7px; }
 
-.chips { display: flex; flex-wrap: wrap; gap: 6px; align-self: flex-start; max-width: 95%; margin: 1px 0 6px; }
+/* respuestas rápidas */
+.chips { display: flex; flex-wrap: wrap; gap: 6px; align-self: flex-start; max-width: 95%; margin: 4px 0 6px; }
 .chip {
   border: 1px solid var(--rio); background: var(--wa-burbuja-bot); color: var(--rio);
   border-radius: 999px; padding: 8px 14px; font-size: 13px; cursor: pointer; min-height: 38px;
   font-weight: 500; transition: background .15s, transform .1s;
+  box-shadow: 0 1px .5px rgba(11, 20, 26, .13);
 }
 .chip:hover { background: var(--rio-claro); }
 .chip:active { transform: scale(.97); }
+.chips--usados .chip { opacity: .45; cursor: default; }
 
-.wa__pie {
-  display: flex; align-items: flex-end; gap: 7px; padding: 8px 10px; flex: none;
-  background: var(--wa-fondo); border-top: 1px solid rgba(0,0,0,.06);
-  padding-bottom: max(8px, env(safe-area-inset-bottom, 0px));
+/* bandeja de adjuntos */
+.wa__bandeja {
+  flex: none; background: var(--wa-barra-pie); border-top: 1px solid var(--wa-sep);
+  padding: 12px 12px 10px; animation: sube-bandeja .2s ease-out;
 }
-.wa__caja { flex: 1; display: flex; align-items: center; gap: 8px; background: var(--wa-burbuja-bot); border-radius: 22px; padding: 6px 12px; min-height: 44px; }
-.wa__caja input { flex: 1; border: 0; background: transparent; font: inherit; color: var(--wa-tinta); min-width: 0; outline: none; }
-.wa__caja button { border: 0; background: transparent; cursor: pointer; font-size: 17px; opacity: .6; padding: 4px; }
-.wa__caja button:hover { opacity: 1; }
-.wa__enviar {
-  width: 44px; height: 44px; border-radius: 50%; border: 0; background: var(--wa-verde-2);
-  color: #fff; font-size: 18px; cursor: pointer; flex: none; display: grid; place-items: center;
+@keyframes sube-bandeja { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .wa__bandeja { animation: none; } }
+.wa__bandeja-rejilla { display: grid; grid-template-columns: 1fr 1fr; gap: 9px; }
+.adj {
+  display: flex; align-items: center; gap: 9px; text-align: left;
+  border: 1px solid var(--wa-sep); background: var(--wa-burbuja-bot); color: var(--wa-tinta);
+  border-radius: 12px; padding: 10px; font-size: 12.5px; font-weight: 500; cursor: pointer;
+  min-height: 52px; transition: transform .14s, border-color .14s;
 }
-.wa__enviar:hover { filter: brightness(1.1); }
-
-.pieza-foto { width: 100%; max-width: 230px; border-radius: 7px; display: block; }
+.adj:hover { transform: translateY(-2px); border-color: var(--rio); }
+.adj__ic { width: 38px; height: 38px; border-radius: 50%; flex: none; display: grid; place-items: center; color: #fff; }
+.adj--foto .adj__ic { background: #7F66FF; }
+.adj--subir .adj__ic { background: #0B7EA8; }
+.adj--audio .adj__ic { background: #D3396D; }
+.adj--audio2 .adj__ic { background: #C27C0E; }
+.wa__bandeja-nota { margin-top: 9px; font-size: 11px; color: var(--wa-hora); }
 
 /* código de un solo uso */
-.otp {
-  display: flex; gap: 8px; justify-content: center; margin: 9px 0 3px;
-}
+.otp { display: flex; gap: 6px; justify-content: center; margin: 10px 0 2px; clear: both; }
 .otp span {
-  font-family: var(--mono); font-size: 25px; font-weight: 700; letter-spacing: .04em;
-  background: var(--superficie-2); border: 1px solid var(--borde); border-radius: 7px;
-  width: 36px; height: 48px; display: grid; place-items: center; color: var(--rio);
+  font-family: var(--mono); font-size: 23px; font-weight: 700; letter-spacing: .04em;
+  background: var(--wa-fondo); border: 1px solid var(--wa-sep); border-radius: 7px;
+  width: 34px; height: 46px; display: grid; place-items: center; color: var(--rio);
 }
+
+/* pie de escritura */
+.wa__pie {
+  flex: none; display: flex; align-items: flex-end; gap: 7px; padding: 7px 8px;
+  background: var(--wa-barra-pie);
+  padding-bottom: max(7px, env(safe-area-inset-bottom, 0px));
+}
+.wa__caja {
+  flex: 1; display: flex; align-items: center; gap: 4px; min-width: 0;
+  background: var(--wa-burbuja-bot); border-radius: 24px; padding: 4px 6px; min-height: 46px;
+  box-shadow: 0 1px .5px rgba(11, 20, 26, .13);
+}
+.wa__caja input {
+  flex: 1; border: 0; background: transparent; font: inherit; font-size: 15px;
+  color: var(--wa-tinta); min-width: 0; outline: none; padding: 4px 2px;
+}
+.wa__caja input::placeholder { color: var(--wa-hora); }
+.wa__caja-ic {
+  width: 36px; height: 36px; flex: none; border: 0; background: transparent; cursor: pointer;
+  color: var(--wa-icono); border-radius: 50%; display: grid; place-items: center;
+}
+.wa__caja-ic:hover { background: rgba(0, 0, 0, .06); }
+.wa__enviar {
+  width: 46px; height: 46px; border-radius: 50%; border: 0; background: var(--wa-enviar);
+  color: #fff; cursor: pointer; flex: none; display: grid; place-items: center;
+  transition: transform .14s;
+}
+.wa__enviar:hover { filter: brightness(1.06); }
+.wa__enviar:active { transform: scale(.94); }
 
 /* ===================== aplicación de la coordinadora ===================== */
 .app { display: flex; flex-direction: column; height: 100%; background: var(--superficie); }

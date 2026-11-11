@@ -181,6 +181,7 @@ window.MV = window.MV || {};
 
       // 4) Imagen
       if (entrada.tipo === 'imagen') return agente.iniciarMarca(aid, chat, entrada.foto);
+      if (entrada.tipo === 'imagen-propia') return agente.fotoPropia(aid, chat, entrada.url);
 
       // 5) Texto libre
       const texto = entrada.texto || '';
@@ -343,13 +344,28 @@ window.MV = window.MV || {};
       }];
     },
 
+    /** Foto real: el agente no la analiza en la demo y lo dice en vez de inventar. */
+    fotoPropia(aid, chat, url) {
+      chat.sesion = { paso: 'marca-propia', datos: { url } };
+      return [{
+        de: 'bot', tipo: 'chips',
+        texto: 'Recibí tu foto. En esta demo no analizo fotos reales, así que prefiero preguntarte antes que inventar: ¿qué es la pieza?',
+        botones: FOTOS.map((f) => ({ id: 'propia-' + f.ref, titulo: f.etiqueta })),
+        nota: 'En producción un modelo leería la foto y la artesana corregiría lo que no cuadre.',
+      }];
+    },
+
     iniciarMarca(aid, chat, foto) {
       chat.sesion = { paso: 'marca-precio', datos: { foto } };
       return [
-        { de: 'bot', tipo: 'texto', texto: 'Recibí tu foto. Déjame mirarla un momento… ' },
+        foto.propia
+          ? { de: 'bot', tipo: 'texto', texto: `Anotado: es ${foto.etiqueta.toLowerCase()}. Publico tu foto tal cual, sin retocarla.` }
+          : { de: 'bot', tipo: 'texto', texto: 'Recibí tu foto. Déjame mirarla un momento…' },
         {
           de: 'bot', tipo: 'chips',
-          texto: `Veo *${foto.detectado.toLowerCase()}*.\n\n¿A cuánto quieres venderla?`,
+          texto: foto.propia
+            ? '¿A cuánto quieres venderla?'
+            : `Veo *${foto.detectado.toLowerCase()}*.\n\n¿A cuánto quieres venderla?`,
           botones: [
             { id: 'precio-' + foto.precioSugerido, titulo: moneda(foto.precioSugerido) },
             { id: 'precio-' + Math.round(foto.precioSugerido * 1.2), titulo: moneda(Math.round(foto.precioSugerido * 1.2)) },
@@ -378,6 +394,7 @@ window.MV = window.MV || {};
         post: foto.post.replace(/\{\{precio\}\}/g, precio),
         estadoWa: foto.estadoWa.replace(/\{\{precio\}\}/g, precio),
         fotoRef: foto.ref,
+        url: foto.url || null,
       });
       const trabajo = foto.horas * S().config.tarifaHora;
       const gananciaPieza = precio - foto.costoMaterial - foto.costoEmpaque - trabajo;
@@ -479,6 +496,12 @@ window.MV = window.MV || {};
         }
       }
 
+      if (b.startsWith('propia-')) {
+        const base = FOTOS.find((f) => f.ref === b.slice(7));
+        const url = (chat.sesion && chat.sesion.datos && chat.sesion.datos.url) || null;
+        if (base) return agente.iniciarMarca(aid, chat, Object.assign({}, base, { url, propia: true }));
+      }
+
       if (b.startsWith('precio-')) {
         const resto = b.slice(7);
         if (resto === 'otro') {
@@ -529,7 +552,7 @@ window.MV = window.MV || {};
 
       if (entrada.tipo === 'boton') {
         const b = entrada.idBoton || '';
-        const esDeSesion = b.startsWith('sel-') || b.startsWith('precio-') || b.startsWith('foto-') ||
+        const esDeSesion = b.startsWith('sel-') || b.startsWith('precio-') || b.startsWith('foto-') || b.startsWith('propia-') ||
           b === 'gasto-hoy' || b === 'gasto-despues';
         if (!esDeSesion) chat.sesion = null;
         return null; // porBoton se encarga
@@ -572,7 +595,7 @@ window.MV = window.MV || {};
         }];
       }
 
-      if (paso === 'venta-producto' || paso === 'marca-foto' || paso === 'marca-precio') {
+      if (paso === 'venta-producto' || paso === 'marca-foto' || paso === 'marca-precio' || paso === 'marca-propia') {
         chat.sesion = null;
         return null;
       }
